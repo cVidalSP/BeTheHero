@@ -1,0 +1,37 @@
+ Rota/Recurso  
+ Métodos HTTP:
+    GET   : Buscar/Listar uma informacao no back-end
+    POST  : Criar uma informacao no back-end
+    PUT   : Alterar uma info no back-end
+    DELETE: Deletar uma info no back-end
+
+
+ 
+    Tipos de parametros:
+
+    Query Params: Parametros nomeados enviados na rota após "?"(filtros, paginacao)
+    Route Params: Parametros utilizados para identificar recursos ":id"
+    Request Body: Corpo da requisicao, utilizado para criar ou alterar recursos
+
+
+    O banco de dados que será utilizado é o SQL. Mais precisamente SQLite
+
+
+
+    Driver: SELECT * FROM users
+    Query Builder: table('users').select('*').where()  -- Vamos utilizar esse
+                                    pois apesar do SQL ser uma linguagem "universal"
+                                    existe diferenca de sintaxes em cada um. Com o query
+                                    builder, não teremos esse problema ao mudar de banco SQL.
+
+    Utilizacao do knexjs para utilizacao de query builder
+        install sqlite3
+
+
+    Normalmente a autenticacao vem atraves do Header da requisicao (contexto da requisicao)
+
+    No metodo Index do IncidentController, é usado paginacao para nao retornar todos os Incidents de uma vez
+
+    Enviado o numero total de incidents no header da response
+
+    Instalacao do modulo CORS. Ele determina quem pode acessar a api.
