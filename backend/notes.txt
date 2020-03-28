@@ -35,3 +35,37 @@
     Enviado o numero total de incidents no header da response
 
     Instalacao do modulo CORS. Ele determina quem pode acessar a api.
+
+
+    Utilização da biblioteca "celebrate" para fazer validações
+
+    Para realizacao dos testes, é necessário um outro banco pra nao sujar o de "verdade", então para construir os mesmos
+        foi alterado o knexjs copiando o banco de development alterando o nome e o filename
+        Intalado o cross-env e alterado no package.json o script de test
+
+        Instalacao do supertest para fazer as chamadas da API para realizacao dos tests
+
+        PARA setar o header da requisicao para a realizacao de outros testes, se deve passar o .set :
+                const response = await request(app)
+                .post('/ongs')
+                .set('Authorization', 'asd')
+                .send({
+                    name: "Ong",
+                    email: "Ong@gmail.com",
+                    whatsapp: "1140028922",
+                    city: "Rio do Sul",
+                    uf: "SC"
+                });
+
+    BACKEND
+        Para testar deploys de aplicacoes experimentais, recomendasse o heroku (plano free)
+        Digital ocean para comercial                  -- Ambos no canal da rocketseat
+
+    FRONTEND
+        netlifly
+
+
+    Dicas de estudos pro futuro:
+        Padroes de codigo: ESlint Prettier
+        autenticacao JWT
+        Styled Components
